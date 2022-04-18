@@ -1,6 +1,6 @@
-! Title: letsblock.it - My filters
+! Title: ncaq's_uBlacklistRule
 ! Expires: 12 hours
-! Homepage: https://letsblock.it
+! Homepage: https://github.com/ncaq/uBlacklistRule
 ! License: https://github.com/xvello/letsblockit/blob/main/LICENSE.txt
 
 ! search-results

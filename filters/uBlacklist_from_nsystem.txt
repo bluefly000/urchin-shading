@@ -1,4 +1,4 @@
-! Title: letsblock.it - My filters
+! Title: uBlacklist_from_nsystem
 ! Expires: 12 hours
 ! Homepage: https://letsblock.it
 ! License: https://github.com/xvello/letsblockit/blob/main/LICENSE.txt
