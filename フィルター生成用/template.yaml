@@ -20,6 +20,7 @@ instances:
     - searx.zackptg5.com
     - paulgo.io
     - searx.be
+    - search.vojkovic.xyz
     sites:
     
     sites---preset---github-copycats: false
