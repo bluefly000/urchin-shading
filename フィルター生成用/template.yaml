@@ -1,0 +1,29 @@
+# letsblock.it filter list export
+#
+# List token: 869b975e-a5d6-49a1-8d03-7403926f2876
+# Export date: 2022-04-18
+#
+# You can edit this file and render it locally, check out instructions at:
+# https://github.com/xvello/letsblockit/tree/main/cmd/render/README.md
+
+title: My filters
+instances:
+- filter: search-results
+  params:
+    bing: false
+    duckduckgo: false
+    google: false
+    kagi: false
+    searx-enable: true
+    searx-instances:
+    - searx.tiekoetter.com
+    - searx.zackptg5.com
+    - paulgo.io
+    - searx.be
+    sites:
+    
+    sites---preset---github-copycats: false
+    sites---preset---npm-copycats: false
+    sites---preset---stackoverflow-copycats: false
+    sites---preset---wikipedia-copycats: false
+    startpage: false
