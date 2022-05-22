@@ -6,7 +6,7 @@
 # You can edit this file and render it locally, check out instructions at:
 # https://github.com/xvello/letsblockit/tree/main/cmd/render/README.md
 
-title: My filters
+title: uBlacklist_from_nsystem
 instances:
 - filter: search-results
   params:
@@ -21,6 +21,8 @@ instances:
     - paulgo.io
     - searx.be
     - search.vojkovic.xyz
+    - searx.loafland.xyz
+    - search.ononoki.org
     sites:
     - .036izu.net
     - .11kamone.com

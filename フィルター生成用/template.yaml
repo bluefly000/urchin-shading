@@ -21,6 +21,8 @@ instances:
     - paulgo.io
     - searx.be
     - search.vojkovic.xyz
+    - searx.loafland.xyz
+    - search.ononoki.org
     sites:
     
     sites---preset---github-copycats: false
