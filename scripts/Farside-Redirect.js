@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Farside Redirect
-// @version      1.3
-// @description  Redirects twitter, reddit, youtube, medium, instagram, wikipedia, imgur, odysee to a proven-working open-source third-party frontend counterpart. Use the menu to enable/disable for specific sites
+// @version      1.4
+// @description  Redirects twitter, reddit, youtube, medium, instagram, wikipedia, imgur, odysee, tiktok to a proven-working open-source third-party frontend counterpart. Use the menu to enable/disable for specific sites
 // @match        http://*/*
 // @include      *
 // @license      MIT
@@ -30,6 +30,7 @@
         wikipedia: true,
         imgur: true,
         odysee: true,
+        tiktok: true,
     }
     preferences.init = async function (){
         const defaultPreferences = preferences.sites;
@@ -91,6 +92,7 @@
             wikiless: "farside.link/wikiless",
             rimgo: "farside.link/rimgo",
             librarian: "farside.link/librarian",
+            proxitok: "proxitok.herokuapp.com",
         };
 
         const originalDomain = getDomain(originalUrl);
@@ -103,6 +105,7 @@
         const wikipediaRegex = preferences.sites.wikipedia ? /https?:\/\/(?:.*\.)*(?<!link\.)wikipedia.org(\/.*)?$/ : /tHisShoUldNeverMatch/;
         const imgurRegex = preferences.sites.imgur ? /https?:\/\/((i\.)?(imgur.com|imgur.io))\/(.*)/ : /tHisShoUldNeverMatch/;
         const odyseeRegex = preferences.sites.odysee ? /https?:\/\/((www\.)?(odysee.com))\/(.*)/ : /tHisShoUldNeverMatch/;
+        const tiktokRegex = preferences.sites.tiktok ? /https?:\/\/((www\.)?(tiktok.com))\/(.*)/ : /tHisShoUldNeverMatch/;
 
         try {
             // Twitter
@@ -179,6 +182,17 @@
                 const newUrl = originalUrl.replace(
                     /https?:\/\/((www\.)?(odysee.com))/,
                     `https://${farsideInstances.librarian}`
+                );
+                return {
+                   redirectUrl: newUrl
+                };
+            }
+            
+            //tiktok
+            if (tiktokRegex.test(originalUrl)) {
+                const newUrl = originalUrl.replace(
+                    /https?:\/\/((www\.)?(tiktok.com))/,
+                    `https://${farsideInstances.proxitok}`
                 );
                 return {
                    redirectUrl: newUrl
