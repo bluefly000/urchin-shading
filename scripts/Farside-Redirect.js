@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Farside redirect
 // @version      1.0
-// @description  Redirects twitter, reddit, youtube, medium, instagram, wikipedia, imgur to a proven-working open-source third-party frontend counterpart. Use the menu to enable/disable for specific sites
+// @description  Redirects twitter, reddit, youtube, medium, instagram, wikipedia, imgur, odysee to a proven-working open-source third-party frontend counterpart. Use the menu to enable/disable for specific sites
 // @match        http://*/*
 // @include      *
 // @license      MIT
@@ -29,6 +29,7 @@
         instagram: true,
         wikipedia: true,
         imgur: true,
+        odysee: true,
     }
     preferences.init = async function (){
         const defaultPreferences = preferences.sites;
@@ -89,6 +90,7 @@
             bibliogram: "farside.link/bibliogram",
             wikiless: "farside.link/wikiless",
             rimgo: "farside.link/rimgo",
+            librarian: "farside.link/librarian",
         };
 
         const originalDomain = getDomain(originalUrl);
@@ -100,6 +102,7 @@
         const instagramRegex = preferences.sites.instagram ? /https?:\/\/(www\.)?(instagram.com|instagr.am)\/.*/ : /tHisShoUldNeverMatch/;
         const wikipediaRegex = preferences.sites.wikipedia ? /https?:\/\/(?:.*\.)*(?<!link\.)wikipedia.org(\/.*)?$/ : /tHisShoUldNeverMatch/;
         const imgurRegex = preferences.sites.imgur ? /https?:\/\/((i\.)?(imgur.com|imgur.io))\/(.*)/ : /tHisShoUldNeverMatch/;
+        const odyseeRegex = preferences.sites.odysee ? /https?:\/\/((www\.)?(odysee.com))\/(.*)/ : /tHisShoUldNeverMatch/;
 
         try {
             // Twitter
@@ -165,6 +168,17 @@
                 const newUrl = originalUrl.replace(
                     /https?:\/\/((i\.)?(imgur.com|imgur.io))/,
                     `https://${farsideInstances.rimgo}`
+                );
+                return {
+                   redirectUrl: newUrl
+                };
+            }
+            
+            //odysee
+            if (odyseeRegex.test(originalUrl)) {
+                const newUrl = originalUrl.replace(
+                    /https?:\/\/((www\.)?(odysee.com))/,
+                    `https://${farsideInstances.librarian}`
                 );
                 return {
                    redirectUrl: newUrl
