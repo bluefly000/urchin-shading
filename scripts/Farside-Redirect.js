@@ -92,7 +92,7 @@
             wikiless: "farside.link/wikiless",
             rimgo: "farside.link/rimgo",
             librarian: "farside.link/librarian",
-            proxitok: "proxitok.herokuapp.com",
+            proxitok: "farside.link/proxitok",
         };
 
         const originalDomain = getDomain(originalUrl);
