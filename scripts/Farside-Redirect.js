@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Farside Redirect
-// @version      1.4
+// @version      1.4.1
 // @description  Redirects twitter, reddit, youtube, medium, instagram, wikipedia, imgur, odysee, tiktok to a proven-working open-source third-party frontend counterpart. Use the menu to enable/disable for specific sites
 // @match        http://*/*
 // @include      *
