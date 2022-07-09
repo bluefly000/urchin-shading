@@ -86,9 +86,9 @@
         let farsideInstances = {
             nitter: "twitter.076.ne.jp",
             teddit: "farside.link/libreddit",
-            invidious: "farside.link/invidious",
+            invidious: "piped.kavin.rocks",
             scribe: "farside.link/scribe",
-            bibliogram: "farside.link/bibliogram",
+            bibliogram: "bibliogram.pussthecat.org",
             wikiless: "farside.link/wikiless",
             rimgo: "farside.link/rimgo",
             librarian: "farside.link/librarian",
